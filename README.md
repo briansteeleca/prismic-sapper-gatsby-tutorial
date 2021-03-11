@@ -4,7 +4,7 @@ This example uses levimykel's [Simple Sapper & Prismic example site](https://git
 
 ## Getting started
 
-To create your new Prismic repository, follow the [Launch the project]() instructions. Once you've installed the Prismic CLI and logged in, you can create your new Prismic repo as follows:
+To create your new Prismic repository, follow the [Launch the project](https://prismic.io/docs/technologies/tutorial-1-launch-project-gatsby) instructions. Once you've installed the Prismic CLI and logged in, you can create your new Prismic repo as follows:
 
 ```
 prismic theme https://github.com/prismicio/gatsby-getting-started-tutorial --ignore-conf
@@ -22,6 +22,12 @@ Now download the Sapper project code from this repo.
 
 ```
 npx degit briansteeleca/prismic-sapper-gatsby-tutorial my-prismic-app
+```
+
+In prismic-config.js, update `apiEndpoint` with your Prismic repo URL. For example, if your new Prismic repo is named 'my-new-prismic-repo', update the apiEndpoint like so:
+
+```
+export const apiEndpoint = "https://my-new-prismic-repo.prismic.io/api/v2";
 ```
 
 Then install the dependencies and run the project in development mode with:
