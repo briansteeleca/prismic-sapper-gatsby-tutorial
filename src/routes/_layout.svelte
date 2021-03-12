@@ -1,9 +1,10 @@
 <script context="module">
-  import { Client } from '../../prismic-config.js';
+  import Prismic from 'prismic-javascript';
 
   let navigation = null;
 
-  export async function preload({ params, query }) {
+  export async function preload(page, { env }) {
+    const Client = Prismic.client(env.PRISMIC_ENDPOINT);
     navigation = await Client.getSingle('navigation');
 
     if (navigation) {

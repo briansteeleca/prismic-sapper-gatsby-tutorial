@@ -1,10 +1,11 @@
 <script context="module">
-  import { Client } from '../../prismic-config.js';
+  import Prismic from 'prismic-javascript';
   import SliceZone from '../components/SliceZone.svelte';
 
   let document = null;
 
-  export async function preload({ params, query }) {
+  export async function preload(page, { env }) {
+    const Client = Prismic.client(env.PRISMIC_ENDPOINT);
     document = await Client.getByUID('page', 'more-info');
 
     if (document) {
