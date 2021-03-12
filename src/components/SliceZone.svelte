@@ -11,7 +11,10 @@
 
 {#each sliceZone as slice, i}
   {#if slice.slice_type === 'text'}
-    <TextContent content={PrismicDOM.RichText.asHtml(slice.primary.content)} />
+    <TextContent
+      content={PrismicDOM.RichText.asHtml(slice.primary.content)}
+      columns={slice.primary.columns}
+    />
   {:else if slice.slice_type === 'quote'}
     <Quote quote={PrismicDOM.RichText.asText(slice.primary.quote)} />
   {:else if slice.slice_type === 'full_width_image'}
