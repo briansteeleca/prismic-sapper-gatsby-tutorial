@@ -24,16 +24,21 @@ Now download the Sapper project code from this repo.
 npx degit briansteeleca/prismic-sapper-gatsby-tutorial my-prismic-app
 ```
 
-In prismic-config.js, update `apiEndpoint` with your Prismic repo URL. For example, if your new Prismic repo is named 'my-new-prismic-repo', update the apiEndpoint like so:
+Now change into the project directory:
 
 ```
-export const apiEndpoint = "https://my-new-prismic-repo.prismic.io/api/v2";
+cd my-prismic-app
+```
+
+In the root of your project, create a file named`.env`. Add the environment variable `PRISMIC_ENDPOINT` equal to your Prismic repo URL. For example, if your new Prismic repo is named 'my-new-prismic-repo', your `.env` file should look like this:
+
+```
+PRISMIC_ENDPOINT=https://my-new-prismic-repo.prismic.io/api/v2
 ```
 
 Then install the dependencies and run the project in development mode with:
 
 ```bash
-cd my-prismic-app
 npm install
 npm run dev
 ```
